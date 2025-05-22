@@ -1,0 +1,259 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Variables (CSS Custom Properties) */
+:root {
+    --primary-color: #007bff;
+    --light-gray-bg: #f4f4f4;
+    --dark-gray-text: #333;
+    --white-color: #fff;
+    --orange-accent: #ff8c00;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--white-color);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light-gray-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px; /* Added padding for consistent spacing */
+    padding-right: 20px; /* Added padding for consistent spacing */
+}
+
+header > div:first-child { /* Company Name */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--dark-gray-text);
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+header > div:last-child { /* Phone Number */
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+#hero {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 4rem 20px;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+#hero button {
+    background-color: var(--orange-accent);
+    color: var(--white-color);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#hero button:hover {
+    background-color: #e07b00; /* Darker orange */
+}
+
+/* Product Categories Section */
+#categories {
+    padding: 2rem 0;
+    text-align: center; /* Center the heading */
+}
+
+#categories h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--dark-gray-text);
+}
+
+#categories > div { /* Container for category items */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 20px; /* Add padding to the container of items */
+}
+
+#categories > div > div { /* Individual category item */
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    background-color: var(--white-color);
+    border-radius: 5px;
+    flex-basis: 200px; /* Base width for each category item */
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Advantages Section */
+#advantages {
+    padding: 2rem 0;
+    background-color: var(--light-gray-bg);
+}
+
+#advantages h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--dark-gray-text);
+}
+
+#advantages > div { /* Container for advantage items */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 20px; /* Add padding to the container of items */
+}
+
+#advantages > div > div { /* Individual advantage item */
+    background-color: var(--white-color);
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    flex-basis: 300px; /* Base width for each advantage item */
+    flex-grow: 1;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#advantages > div > div h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Contact Us Section */
+#contact {
+    padding: 2rem 0;
+    text-align: center; /* Center the heading and address */
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--dark-gray-text);
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+#map-placeholder {
+    width: 80%;
+    max-width: 600px;
+    height: 300px;
+    background-color: #ccc;
+    margin: 0 auto;
+    border-radius: 5px;
+    display: flex; /* For centering text if needed */
+    justify-content: center; /* For centering text if needed */
+    align-items: center; /* For centering text if needed */
+    color: #555; /* Text color for "Карта здесь" */
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-gray-text);
+    color: var(--white-color);
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+/* Basic Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    header > div:first-child, /* Company Name */
+    header > div:last-child { /* Phone Number */
+        margin-bottom: 0.5rem;
+    }
+
+    #hero h1 {
+        font-size: 2.2rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    #categories > div,
+    #advantages > div {
+        flex-direction: column;
+        align-items: center; /* Center items when stacked */
+    }
+
+    #categories > div > div,
+    #advantages > div > div {
+        width: 90%; /* Make items wider on small screens */
+        max-width: 400px; /* But not too wide */
+        margin-bottom: 1rem;
+    }
+
+    #map-placeholder {
+        width: 95%;
+        height: 250px;
+    }
+}
